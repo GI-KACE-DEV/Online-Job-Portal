@@ -183,8 +183,8 @@ class DashboardController extends Controller
 
     // Get All Employers 
     public function getEmployers(){
-        $employers = User::latest()->where('user_type', 'employer')->get();
-        return view('admin.employers.index', compact('employers'));
+        $companies = User::latest()->where('user_type', 'employer')->get();
+        return view('admin.employers.index', compact('companies'));
 
     }
 
@@ -197,13 +197,13 @@ class DashboardController extends Controller
         $employer->status = !$employer->status;
         $employer->save();
 
-        return redirect('/dashboard/employers')->with('success', 'Status Updated Successfully!');
+        return redirect('/dashboard/company')->with('success', 'Status Updated Successfully!');
     }
 
     public function editEmployer($id){
         $employer = User::findOrFail($id);
-        $company = Company::where('user_id', $id)->get();
-        return view('admin.employers.edit', compact('employer', 'company'));
+        $companies = Company::where('user_id', $id)->get();
+        return view('admin.employers.edit', compact('employer', 'companies'));
 
     }
 
@@ -271,7 +271,7 @@ class DashboardController extends Controller
         }
 
         $employer->delete();
-        return redirect('/dashboard/employers')->with('success', 'Employee Deleted Successfully!');
+        return redirect('/dashboard/companies')->with('success', 'Employee Deleted Successfully!');
     }
 
  

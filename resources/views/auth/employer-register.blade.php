@@ -19,7 +19,7 @@
 
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center"><h3 class="mt-1">{{ __('Employer Register') }}</h3></div>
+                <div class="card-header text-center"><h3 class="mt-1">{{ __('Company Register') }}</h3></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('empl.register') }}">

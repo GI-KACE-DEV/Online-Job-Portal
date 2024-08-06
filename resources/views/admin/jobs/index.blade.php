@@ -69,7 +69,7 @@
                                             @endif
                                             
                                         </td>
-                                        <td><span class="badge badge-lg badge-info text-white">{{ date('F d, Y', strtotime($job->crated_at)) }}</span></td>
+                                        <td><span class="badge badge-lg badge-info text-white">{{ date('F d, Y', strtotime($job->created_at)) }}</span></td>
 
                                         <td> <span class="badge badge-lg badge-warning text-black">{{ date('F d, Y', strtotime($job->last_date)) }}</span></td>
 

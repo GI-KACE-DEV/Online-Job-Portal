@@ -144,7 +144,7 @@
         @if (count($weeklyEmployee) > 0)
         <div class="col-md-4">
           <div class="card">
-              <div class="card-header">Recent Employers</div>
+              <div class="card-header">Recent Companies</div>
               <div class="card-body pt-0 ">
                   <table class="table table-striped mb-0">
                     <thead>

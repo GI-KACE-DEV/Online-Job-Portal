@@ -13,7 +13,7 @@
           </ol>
         </nav>
         <div class="create-item">
-            <a href="/dashboard/employers" class="theme-primary-btn btn btn-primary"><i class="material-icons">arrow_back</i>&nbsp;Back to employers</a>
+            <a href="/dashboard/companies" class="theme-primary-btn btn btn-primary"><i class="material-icons">arrow_back</i>&nbsp;Back to employers</a>
           
         </div>
     </div>
