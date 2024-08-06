@@ -276,10 +276,10 @@ class DashboardController extends Controller
 
  
 
-    // // Get All candidates 
+    // // Get All users 
     public function getAllCatedidates(){
-        $candidates = User::latest()->where('user_type', 'seeker')->get();
-        return view('admin.candidates.index', compact('candidates'));
+        $users = User::latest()->where('user_type', 'seeker')->get();
+        return view('admin.candidates.index', compact('users'));
 
     }
 
@@ -291,7 +291,7 @@ class DashboardController extends Controller
         $candidate->status = !$candidate->status;
         $candidate->save();
 
-        return redirect('/dashboard/candidates')->with('success', 'Status Updated Successfully!');
+        return redirect('/dashboard/users')->with('success', 'Status Updated Successfully!');
     }
 
 

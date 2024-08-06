@@ -22,8 +22,8 @@ Route::middleware('admin')->prefix('dashboard')->group(function () {
     Route::post('/job/delete', [DashboardController::class, 'destroy'])->name('adminDelete');
     
     Route::post('/job/trash/permanant', [DashboardController::class, 'jobDeletePermanantly'])->name('adminJobDelPermanent');
-    // All Candidates
-    Route::get('/candidates', [DashboardController::class, 'getAllCatedidates'])->name('adminCandidates');
+    // All Users
+    Route::get('/users', [DashboardController::class, 'getAllCatedidates'])->name('adminCandidates');
     Route::get('/candidate/toggle/{id}', [DashboardController::class, 'candidateToggle'])->name('adminCanToggle');
     
     Route::get('/candidate/edit/{id}', [DashboardController::class, 'editCandidate'])->name('adminEditCan');

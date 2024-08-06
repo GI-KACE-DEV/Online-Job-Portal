@@ -10,12 +10,12 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="material-icons">home</i>Home</a></li>
             
-            <li class="breadcrumb-item active" aria-current="page">Candidates</li>
+            <li class="breadcrumb-item active" aria-current="page">Users</li>
           </ol>
         </nav>
         <div class="create-item">
-            <a href="#" class="theme-primary-btn btn btn-primary"><i class="material-icons">add</i>&nbsp;Create new candidate</a>
-            <a href="#" class="theme-secondary-btn btn btn-secondary"><i class="material-icons">import_export</i>&nbsp;Export candidate</a>
+            <a href="#" class="theme-primary-btn btn btn-primary"><i class="material-icons">add</i>&nbsp;Create new users</a>
+            <a href="#" class="theme-secondary-btn btn btn-secondary"><i class="material-icons">import_export</i>&nbsp;Export user</a>
            
           
         </div>
@@ -33,7 +33,7 @@
                                 <tr>
                                     <th>SL</th>
                                
-                                    <th>Candidate Name</th>
+                                    <th>User Name</th>
                                     <th>Email Verified</th>
                                     <th>Status</th>
                                    

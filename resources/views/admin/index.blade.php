@@ -3,35 +3,46 @@
 @section('content')
         <!-- Dashboard Box -->
         <div class="row animated fadeInUp">
+       
           @if (count($users) > 0)
             
-        
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-info o-hidden h-100">
-                <div class="card-body pt-5 pb-5 d-flex align-items-center">
-                  <div class="card-body-icon">
-                    <i class="material-icons text-white md-5em">group</i>
+            
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-info o-hidden h-100">
+                  <div class="card-body pt-5 pb-5 d-flex align-items-center">
+                    
+                    <div class="card-body-icon">
+                      <a href="dashboard/users">
+                        <i class="material-icons text-white md-5em">group</i>
+                      </a>
+                    </div>
+                    <div class="ml-5">
+                    <a href="dashboard/users">
+                      <h3 style="color:white;">( {{ count($users) }} ) </h3>
+                      <p style="color:white;">Total Users</p>
+                      </a>
+                    </div>
                   </div>
-                  <div class="ml-5">
-                    <h3>( {{ count($users) }} ) </h3>
-                    <p>Total Candidates</p>
-                  </div>
+          
                 </div>
-        
               </div>
-            </div>
-            @endif
+            
+          @endif
 
             @if (count($activeJobs) > 0)
             <div class="col-xl-3 col-sm-6 mb-3">
               <div class="card text-white bg-primary o-hidden h-100">
                 <div class="card-body pt-5 pb-5 d-flex align-items-center">
                   <div class="card-body-icon">
+                  <a href="dashboard/jobs">
     <i class="material-icons text-white md-5em">business_center</i>
+</a>
                   </div>
                   <div class="ml-5">
-                    <h3>( {{ count($activeJobs) }} )</h3>
-                    <p>Total Active Jobs</p>
+                  <a href="dashboard/jobs">
+                    <h3 style="color:white;">( {{ count($activeJobs) }} )</h3>
+                    <p style="color:white;">Total Active Jobs</p>
+</a>
                   </div>
                 </div>
               </div>
@@ -48,7 +59,7 @@
                   </div>
                   <div class="ml-5">
                     <h3>( {{ count($companies) }} )</h3>
-                    <p> Total Employes Jobs</p>
+                    <p> Total Companies</p>
                   </div>
                 </div>
               </div>
@@ -90,7 +101,7 @@
           @if (count($weeklyUsers) > 0)
           <div class="col-md-4">
             <div class="card">
-                <div class="card-header">Recent Candidates</div>
+                <div class="card-header">Recent Users</div>
                 <div class="card-body pt-0 border-0">
                    <table class="table table-striped mb-0">
                       <thead>
