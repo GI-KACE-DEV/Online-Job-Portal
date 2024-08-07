@@ -32,7 +32,7 @@ Route::middleware('admin')->prefix('dashboard')->group(function () {
     Route::post('/candidate/delete/{id}', [DashboardController::class, 'destroyCandidate'])->name('adminCanDelete');
 
     // All Employer
-    Route::get('/employers', [DashboardController::class, 'getEmployers'])->name('adminEmployers');
+    Route::get('/companies', [DashboardController::class, 'getEmployers'])->name('adminEmployers');
     Route::get('/employer/toggle/{id}', [DashboardController::class, 'employerToggle'])->name('employerToggle');
     
     Route::get('/employer/edit/{id}', [DashboardController::class, 'editEmployer'])->name('adminEditEmp');

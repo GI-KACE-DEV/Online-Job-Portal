@@ -225,7 +225,7 @@
       new Chart(ctx, {
       type: 'pie',
       data: {
-          labels: ['Employes', 'Users', 'Jobs'],
+          labels: ['Companies', 'Users', 'Jobs'],
           datasets: [{
           data: [data.employes, data.users, data.jobs],
           backgroundColor: ['#ff6384', '#36a2eb', '#ffce56']

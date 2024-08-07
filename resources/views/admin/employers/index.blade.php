@@ -10,13 +10,13 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="material-icons">home</i>Home</a></li>
             
-            <li class="breadcrumb-item active" aria-current="page">Employers</li>
+            <li class="breadcrumb-item active" aria-current="page">Companies</li>
           </ol>
         </nav>
         <div class="create-item">
-            <a href="#" class="theme-primary-btn btn btn-primary"><i class="material-icons">add</i>&nbsp;Create new employers</a>
-            <a href="#" class="theme-secondary-btn btn btn-secondary"><i class="material-icons">import_export</i>&nbsp;Export employers</a>
-            {{-- <a href="{{ route('adminEmpTrash') }}" class="theme-danger-btn btn btn-danger"><i class="material-icons">delete</i>&nbsp;Restore employers</a> --}}
+            <a href="#" class="theme-primary-btn btn btn-primary"><i class="material-icons">add</i>&nbsp;Create new companies</a>
+            <a href="#" class="theme-secondary-btn btn btn-secondary"><i class="material-icons">import_export</i>&nbsp;Export companies</a>
+            {{-- <a href="{{ route('adminEmpTrash') }}" class="theme-danger-btn btn btn-danger"><i class="material-icons">delete</i>&nbsp;Restore companies</a> --}}
           
         </div>
     </div>
@@ -44,7 +44,7 @@
 
 
                                 <?php $i=0; ?>
-                                @foreach ($employers as $employer)
+                                @foreach ($companies as $employer)
                                 <?php $i++ ?>
                                     
     

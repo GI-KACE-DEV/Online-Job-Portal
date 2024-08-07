@@ -9,7 +9,7 @@
           <div class="brand-logo">
             <a class="navbar-brand" href="{{ url('/') }}" id="menu-action">
               {{-- <div class="user-photo d-desktop">
-                <img src="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" alt="">
+                <img src="{{ asset('backend/assets/images/icon/knust.jpg') }}" alt="">
               </div> --}}
               <span>{{ config('app.adminName', 'JobBoard Admin Pannel') }}</span>
             </a>    
@@ -39,7 +39,7 @@
               <li class="nav-item dropdown show">
                 <a href="#" class="navbar-nav-link dropdown-toggle text-light" data-toggle="dropdown" aria-expanded="true">
                   <div class="user-photo">
-                    <img src="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" alt="">
+                    <img src="{{ asset('backend/assets/images/icon/knust.jpg') }}" alt="">
                   </div>
 
                   
@@ -47,11 +47,11 @@
                   
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <a href="" class="dropdown-item"> 
+                  <!-- <a href="" class="dropdown-item"> 
                     <i class="material-icons">
                       person_pin
                     </i>
-                  Account Settings</a>
+                  Account Settings</a> -->
                   <div class="menu-dropdown-divider"></div>
                  
 
@@ -76,13 +76,13 @@
     <!--   For Toggle Mobile Nav -->
      <div class="toggle-user-menu" id = "toggle-user-menu">
         <ul>
-          <li><a href="#"><div class="user-photo"><img src="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" alt=""></div>admin@admin.com</a></li>
-          <li><a href="">
+          <li><a href="#"><div class="user-photo"><img src="{{ asset('backend/assets/images/icon/knust.jpg') }}" alt=""></div>admin@admin.com</a></li>
+          <!-- <li><a href="">
             <i class="material-icons mr-2">
                     supervisor_account
                     </i>
                   Account Settings
-                </a></li>
+                </a></li> -->
           <li><a href="{{ route('logout') }}"
             onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();"><i class="material-icons mr-2">exit_to_app</i>Logout</a></li>

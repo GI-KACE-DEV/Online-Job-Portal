@@ -9,7 +9,7 @@
               <div class="left-sidebar" id="wrapper-sidebar">
                 <ul>
                   <li><a class="{{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ url('/dashboard') }}"><i class="material-icons">home</i>Dashboard</a></li>
-                  <li><a  class="{{ request()->routeIs('adminEmployers') || request()->routeIs('adminEditEmp') ? 'active' : '' }}" href="{{ url('/dashboard/employers') }}"><i class="material-icons">supervisor_account</i>Employers</a></li>
+                  <li><a  class="{{ request()->routeIs('adminEmployers') || request()->routeIs('adminEditEmp') ? 'active' : '' }}" href="{{ url('/dashboard/companies') }}"><i class="material-icons">supervisor_account</i>Companies</a></li>
                   <li><a  class="{{request()->routeIs('adminCanTrash') || request()->routeIs('adminEditCan') || request()->routeIs('adminCandidates') ? 'active' : '' }}" href="{{ url('/dashboard/users') }}"><i class="material-icons">person</i>Users</a></li>
                   <li><a class="{{  request()->routeIs('adminTestiEdit') || request()->routeIs('adminTestimonial') || request()->routeIs('adminTestimonials') ? 'active' : '' }}" href="{{ route('adminTestimonials') }}"><i class="material-icons">comment</i>Testimonial</a></li>
                   <li><a class="{{ request()->routeIs('adminEditCat') || request()->routeIs('adminCategory')? 'active' : '' }}" href="{{ route('adminCategory') }}"><i class="material-icons">format_align_center</i>Category</a></li>

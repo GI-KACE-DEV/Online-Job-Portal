@@ -20,7 +20,7 @@
 
           <p class="mb-4 h5 font-italic lineheight1-5">&ldquo;{{ $testimonial->content }}&rdquo;</p>
           <p>&mdash; <strong class="text-black font-weight-bold">{{ $testimonial->name }}</strong>, {{ $testimonial->profession }}</p>
-          <p><a href="https://vimeo.com/{{ $testimonial->video_id }}" class="popup-vimeo text-uppercase">Watch Video <span class="icon-arrow-right small"></span></a></p>
+          <!-- <p><a href="https://vimeo.com/{{ $testimonial->video_id }}" class="popup-vimeo text-uppercase">Watch Video <span class="icon-arrow-right small"></span></a></p> -->
         </div>
       </div>
     </div>
