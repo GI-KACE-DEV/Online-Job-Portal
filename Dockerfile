@@ -40,9 +40,9 @@ RUN npm install
 # RUN npm run dev
 
 
-RUN php artisan migrate:fresh
+# RUN php artisan migrate:fresh
 
-RUN php artisan db:seed
+# RUN php artisan db:seed
 
 # Default command
 CMD ["php", "-S", "0.0.0.0:80"]
