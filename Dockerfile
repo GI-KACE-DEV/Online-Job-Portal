@@ -36,10 +36,5 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 # Install Node.js dependencies
 RUN npm install --production
 
-
 # Optimize Laravel application
-RUN php artisan optimize:clear && php artisan storage:link && php artisan migrate --force && php artisan db:seed
-
-
-# Default command
-#CMD ["php", "-S", "0.0.0.0:80"]
+CMD ["php", "artisan", "migrate:fresh", "php", "artisan", "db:seed"]
