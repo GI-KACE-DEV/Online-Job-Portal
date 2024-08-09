@@ -36,5 +36,16 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 # Install Node.js dependencies
 RUN npm install --production
 
+
+
+# Copy the custom entrypoint script
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Set the entrypoint script as executable
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Set the custom entrypoint
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
 # Optimize Laravel application
-CMD ["php", "artisan", "migrate:fresh", "php", "artisan", "db:seed"]
+#CMD ["php", "artisan", "migrate:fresh", "php", "artisan", "db:seed"]
