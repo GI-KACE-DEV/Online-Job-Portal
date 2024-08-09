@@ -27,17 +27,19 @@ COPY . /app
 RUN composer update
 
 # Install PHP dependencies
-RUN composer install
+RUN composer install --no-dev --optimize-autoloader
 
 # Install Node.js and npm (if not already included in the base image)
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs
 
 # Install Node.js dependencies
-RUN npm install
+RUN npm install --production
 
 
+# Optimize Laravel application
 RUN php artisan optimize:clear && php artisan storage:link && php artisan migrate --force && php artisan db:seed
+
 
 # Default command
 #CMD ["php", "-S", "0.0.0.0:80"]
