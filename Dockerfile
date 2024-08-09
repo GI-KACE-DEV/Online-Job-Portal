@@ -1,62 +1,43 @@
-# Use an official PHP 8.2 image as a base
-FROM php:8.2-fpm
+FROM php:7.2-fpm
 
-# Install system dependencies and PHP extensions
-RUN apt-get update && apt-get install -y \
-    libpng-dev \
-    libjpeg-dev \
-    libfreetype6-dev \
-    libzip-dev \
-    unzip \
-    git \
-    && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd zip pdo pdo_mysql \
-    && rm -rf /var/lib/apt/lists/*
+# Copy composer.lock and composer.json
+COPY composer.lock composer.json /var/www/
 
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-
-# Set the working directory
-# WORKDIR /app
-
-# Set the working directory in the container
+# Set working directory
 WORKDIR /var/www
 
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+#    mysql-client \
+    locales \
+    git \
+    unzip \
+    zip \
+    curl
 
-# Copy the application code into the container
-COPY . .
-# Copy application files
-# COPY . /app
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Install extensions
+RUN docker-php-ext-install pdo_mysql mbstring  exif pcntl
 
-# Install PHP dependencies
-RUN composer update
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader
+# Add user for laravel application
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
 
+# Copy existing application directory contents
+COPY . /var/www
 
-# Generate the optimized autoload files
-RUN composer dump-autoload --optimize
+# Copy existing application directory permissions
+COPY --chown=www:www . /var/www
 
-# Install Node.js and npm (if not already included in the base image)
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
+# Change current user to www
+USER www
 
-# Install Node.js dependencies
-RUN npm install
-
-
-
-# Copy the custom entrypoint script
-COPY entrypoint.sh /usr/bin/entrypoint.sh
-
-# Set the entrypoint script as executable
-RUN chmod +x /usr/bin/entrypoint.sh
-
-# Set the custom entrypoint
-ENTRYPOINT ["/usr/bin/entrypoint.sh"]
-
-# Optimize Laravel application
-#CMD ["php", "artisan", "migrate:fresh", "php", "artisan", "db:seed"]
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]
