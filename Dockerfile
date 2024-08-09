@@ -37,7 +37,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 RUN npm install
 
 # Run the build process
-RUN npm run dev
+# RUN npm run dev
 
 
 RUN php artisan migrate:fresh
