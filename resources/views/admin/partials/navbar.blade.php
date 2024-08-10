@@ -11,7 +11,7 @@
               {{-- <div class="user-photo d-desktop">
                 <img src="{{ asset('backend/assets/images/icon/knust.jpg') }}" alt="">
               </div> --}}
-              <span>{{ config('app.adminName', 'JobBoard Admin Pannel') }}</span>
+              <span>{{ config('app.adminName', 'Online Job Portal') }}</span>
             </a>    
 
            

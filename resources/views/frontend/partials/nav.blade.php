@@ -126,7 +126,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content pb-4">
       <div class="modal-header mt-2 mb-2">
-        <h5 class="modal-title" id="login-modal">{{ __('User/Employee/Admin') }}</h5>
+        <h5 class="modal-title" id="login-modal">{{ __('User Login') }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

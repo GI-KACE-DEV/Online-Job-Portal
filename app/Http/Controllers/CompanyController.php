@@ -40,11 +40,13 @@ class CompanyController extends Controller
         $user_id = auth()->user()->id;
 
         $request->validate([
-            'address' => 'required|min:20|max:450',
-            'phone'=> 'required|digits:11',
+            // 'address' => 'required|min:20|max:450',
+            'address' => 'required|max:40',
+            // 'phone'=> 'required|digits:11',
+            'phone'=> 'required|digits:15',
             'website'=> 'required',
-            'slogan'=> 'required|min:10|max:100',
-            'description'=> 'required|min:100|max:4000',
+            'slogan'=> 'required|max:100',
+            'description'=> 'required|max:4000',
         ]);
 
 

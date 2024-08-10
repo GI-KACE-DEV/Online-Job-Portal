@@ -30,8 +30,8 @@
                                 <tr>
                                     
                                   
-                                    <th scope="col">Sl:</th>
-                                    <th scope="col">Nababur:</th>
+                                    <th scope="col">No:</th>
+                                    <th scope="col">Full Name:</th>
                                  
                                     <th scope="col">Email:</th>
                                     <th scope="col">Gender:</th>
@@ -53,14 +53,14 @@
                                         <td>{{$user->profile->bio}}</td>
                             
                                         @if ($user->profile->cover_letter)
-                                        <td><a class="badge badge-secondary" target="_blank" href="{{ url('storage/'.$user->profile->cover_letter) }}">Cover letter</a></td>
+                                        <td><a class="badge badge-secondary" target="_blank" href="{{ url('storage/app/'.$user->profile->cover_letter) }}">Cover letter</a></td>
                                         
                                         @else
                                         <td>Not uploaded</td>
                                         @endif
 
                                         @if ($user->profile->resume)
-                                        <td><a class="badge badge-secondary" target="_blank" href="{{ url('storage/'.$user->profile->resume) }}">Resume</a></td>
+                                        <td><a class="badge badge-secondary" target="_blank" href="{{ url('storage/app/'.$user->profile->resume) }}">Resume</a></td>
                                         
                                         @else
                                         <td>Not uploaded</td>

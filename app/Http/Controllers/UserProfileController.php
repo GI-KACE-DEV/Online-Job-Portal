@@ -33,10 +33,14 @@ class UserProfileController extends Controller
         $user_id = auth()->user()->id;
 
         $request->validate([
-            'address' => 'required|min:20|max:255',
-            'phone'=> 'required|digits:11',
-            'experience'=> 'required|min:10|max:255',
-            'bio'=> 'required|min:30|max:450',
+            // 'address' => 'required|min:20|max:255',
+            // 'phone'=> 'required|digits:11',
+            // 'experience'=> 'required|min:10|max:255',
+            // 'bio'=> 'required|min:30|max:450',
+            'address' => 'required',
+            'phone'=> 'required',
+            'experience'=> 'required',
+            'bio'=> 'required',
         ]);
 
 
