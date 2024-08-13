@@ -1,66 +1,23 @@
-FROM php:8.2-fpm
+FROM php:8.2-fpm as php
 
 # Arguments defined in docker-compose.yml
 ARG user
 ARG uid
 
-# Copy composer.lock and composer.json
-#COPY composer.lock composer.json /var/www/
+RUN apt-get update -y
+RUN apt-get install -y unzip libpq-dev libcurl4-gnutls-dev
+RUN docker-php-ext-install pdo pdo_mysql bcmath
 
-COPY ./db/online_job_db.sql /docker-compose/mysql/init/docker-entrypoint-initdb.d/online_job_db.sql
+RUN pecl install -o -f redis \
+    && rm -rf /tmp/pear \
+    && docker-php-ext-enable redis
 
-# Set working directory
 WORKDIR /var/www
+COPY . .
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip \
-    libzip-dev \
-    -y mariadb-client
+COPY --from=composer:2.3.5 /usr/bin/composer /usr/bin/composer
 
-
-    # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Copy the application code into the container
-COPY . /var/www
-
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Install PHP extensions
-RUN docker-php-ext-install zip mysqli pdo_mysql mbstring exif pcntl bcmath gd && docker-php-ext-enable mysqli
-
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-# Create system user to run Composer and Artisan Commands
-RUN useradd -G www-data,root -u $uid -d /home/$user $user
-RUN mkdir -p /home/$user/.composer && \
-    chown -R $user:$user /home/$user
-
-
-    # Install PHP dependencies
-#RUN composer update
-
-# Install PHP dependencies
-# RUN composer install --no-dev --optimize-autoloader
-
-# # Generate the optimized autoload files
-# RUN composer dump-autoload --optimize
-
-
-# Install Node.js and npm (if not already included in the base image)
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
-    && apt-get install -y nodejs
-
-# Install Node.js dependencies
-RUN npm install
+ENV PORT=8000
 
 
 # Copy the custom entrypoint script
@@ -75,4 +32,15 @@ ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 # Set working directory
 #WORKDIR /var/www
 
+# ==============================================================================
+#  node
+FROM node:14-alpine as node
+
+WORKDIR /var/www
+COPY . .
+
+RUN npm install --global cross-env
+RUN npm install
+
+VOLUME /var/www/node_modules
 USER $user

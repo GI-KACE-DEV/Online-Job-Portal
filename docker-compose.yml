@@ -6,19 +6,26 @@ services:
         user: sammy
         uid: 1000
       context: ./
+      target: php
       dockerfile: Dockerfile.dev
     working_dir: /var/www/
     environment:
       - COMPOSER_MEMORY_LIMIT=-1
+      - CONTAINER_ROLE=app
     depends_on:
       - db
     volumes:
       - ./:/var/www
+    ports:
+          - 8000:8000
     networks:
       - lahmi
 
   db:
     image: mysql:5.7
+    # build:
+    #   context: ./
+    #   dockerfile: Dockerfile.mysql
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
@@ -31,7 +38,7 @@ services:
       - ./docker-compose/mysql/my.cnf:/etc/mysql/my.cnf
       - ./docker-compose/mysql/init:/docker-entrypoint-initdb.d
     ports:
-      - 3307:3306
+      - 3306:3306
     networks:
       - lahmi
 
@@ -47,6 +54,26 @@ services:
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
       - lahmi
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    depends_on:
+      - db
+    ports:
+    - "8081:80"
+    volumes:
+      - /sessions
+    networks:
+      - lahmi
+    links:
+      - db
 
 networks:
   lahmi:
