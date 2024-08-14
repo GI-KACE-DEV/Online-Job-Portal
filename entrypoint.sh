@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [ ! -f "vendor/autoload.php" ]; then
+    composer update
     composer install --no-progress --no-interaction
 fi
 
