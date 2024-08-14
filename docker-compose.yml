@@ -6,7 +6,7 @@ services:
         user: sammy
         uid: 1000
       context: ./
-      #target: php
+      target: php
       dockerfile: Dockerfile
     working_dir: /var/www/
     environment:
