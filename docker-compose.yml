@@ -16,6 +16,7 @@ services:
       - db
     volumes:
       - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/nginx.conf/
     ports:
           - 10000:10000
     networks:
