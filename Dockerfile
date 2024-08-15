@@ -1,8 +1,8 @@
 FROM php:8.2-fpm as php
 
 # Arguments defined in docker-compose.yml
-ARG user
-ARG uid
+# ARG user
+# ARG uid
 
 RUN apt-get update -y
 RUN apt-get install -y unzip libpq-dev libcurl4-gnutls-dev
@@ -43,4 +43,4 @@ RUN npm install --global cross-env
 RUN npm install
 
 VOLUME /var/www/node_modules
-USER $user
+# USER $user
