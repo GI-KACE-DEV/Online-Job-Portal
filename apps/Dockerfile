@@ -44,3 +44,7 @@ RUN npm install
 
 VOLUME /var/www/node_modules
 # USER $user
+
+
+# Expose the port that the application listens on.
+EXPOSE 10000
