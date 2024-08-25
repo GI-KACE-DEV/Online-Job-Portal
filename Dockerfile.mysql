@@ -1,0 +1,4 @@
+FROM mysql:5.7
+
+COPY ./db/online_job_db.sql /docker-entrypoint-initdb.d/online_job_db.sql
+
