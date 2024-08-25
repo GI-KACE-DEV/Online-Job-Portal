@@ -111,7 +111,7 @@
           </div>
           <div class=" mb-8 bg-white">
             <h3 class="h5 text-black mb-3"><i class="icon-money" style="color: #28a745;">&nbsp;</i>Salary</h3>
-            <p>${{$job->salary}}</p>
+            <p>GH₵{{$job->salary}}</p>
           </div>
       
  

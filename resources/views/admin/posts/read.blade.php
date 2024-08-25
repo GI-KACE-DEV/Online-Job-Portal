@@ -93,7 +93,7 @@
               <p>
                 <span class="d-block"><span class="icon-suitcase"></span> {{ Str::limit($feature->position, 20)}}</span>
                 <span class="d-block"><span class="icon-room"></span> {{ Str::limit($feature->address, 20)}}</span>
-                <span class="d-block"><span class="icon-money mr-1"></span> ${{ $feature->salary }}</span>
+                <span class="d-block"><span class="icon-money mr-1"></span> GH₵{{ $feature->salary }}</span>
               </p>
               <p class="mb-0">{{ Str::limit($feature->description, 150)}}</p>
             </div>
