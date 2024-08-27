@@ -6,7 +6,7 @@
 <div class="unit-5 overlay" style="background-image: url({{ asset('uploads/banner') }}/{{ $company->banner }});">
     <div class="container text-center">
       <h1 class="mb-0" style="    color: #fff;
-      font-size: 2.5rem;">Company name:<strong>&nbsp;{{ $company->cname }}</strong></h1>
+      font-size: 2.5rem;"><strong>&nbsp;{{ $company->cname }}</strong></h1>
       <p class="mb-0 unit-6"><a href="/">Home</a> <span class="sep"> > <a href="{{ route('alljobs') }}">Jobs</a> </span> <span><span class="sep m-0"> ></span> Company details</span></p>
     </div>
 </div>
@@ -31,7 +31,7 @@
                     <img src="{{ asset('uploads/logo') }}/{{ $company->logo }}" style="width:100px; height:100px;border-radius:100px;object-fit: cover;" class="border  mb-3" alt="">
                     @endif
         
-                    <h3 class="mx-4 mb-0">Company name:<strong>&nbsp;{{ $company->cname }}</strong> </h3>
+                    <h3 class="mx-4 mb-0"><strong>&nbsp;{{ $company->cname }}</strong> </h3>
 
                 </div>
                 <p class="mt-3"><strong>Company Details:</strong> &nbsp;{{ $company->description }}</p>

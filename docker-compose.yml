@@ -1,0 +1,85 @@
+#version: '3.8'
+services:
+  app:
+    build:
+      # args:
+      #   user: sammy
+      #   uid: 1000
+      context: ./
+      target: php
+      dockerfile: Dockerfile
+    working_dir: /var/www/
+    environment:
+      - COMPOSER_MEMORY_LIMIT=-1
+      - CONTAINER_ROLE=app
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/nginx.conf/
+    ports:
+          - 10000:10000
+    networks:
+      - lahmi
+
+  db:
+    image: mysql:5.7
+    # build:
+    #   context: ./
+    #   dockerfile: Dockerfile.mysql
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./docker-compose/mysql/my.cnf:/etc/mysql/my.cnf
+      - ./docker-compose/mysql/init:/docker-entrypoint-initdb.d
+    ports:
+      - 3307:3306
+    networks:
+      - lahmi
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - 8005:80
+    depends_on:
+      - db
+      - app
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - lahmi
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    depends_on:
+      - db
+    ports:
+    - "8081:80"
+    volumes:
+      - /sessions
+    networks:
+      - lahmi
+    links:
+      - db
+
+networks:
+  lahmi:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local

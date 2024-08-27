@@ -95,7 +95,7 @@
                                                     </button>
                                                     </div>
                                                     <div class="modal-body text-center">
-                                                        <h4> Do you want to move candidate Trash?</h4>
+                                                        <h4> Do you want to delete user?</h4>
                                                     </div>
                                                     <form action="{{ route('adminCanDelete',[$candidate->id]) }}" method="POST">
                                                         @csrf

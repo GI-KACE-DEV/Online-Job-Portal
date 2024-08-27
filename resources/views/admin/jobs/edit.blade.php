@@ -139,7 +139,7 @@
                  </div>
             </div>
             <div class="form-group row">
-                <div class="col-md-2">Nomber of vacancy</div>
+                <div class="col-md-2">Number of vacancy</div>
                 <div class="col-md-4">
                     <input type="text" name="number_of_vacancy" class="form-control{{ $errors->has('number_of_vacancy') ? ' is-invalid' : '' }}"  value="{{ $job->number_of_vacancy }}">
                     @if ($errors->has('number_of_vacancy'))
@@ -207,7 +207,7 @@
             <div class="form-group pt-2 row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <button class="theme-primary-btn btn btn-success" type="submit">Post job</button>
+                    <button class="theme-primary-btn btn btn-success" type="submit">Update job</button>
                  
                  </div>
             </div>

@@ -54,7 +54,7 @@
                   <div class="d-block d-lg-flex">
                     <div class="mr-3"><span class="icon-suitcase mr-1"></span> {{ Str::limit($job->position, 20)}}</div>
                     <div class="mr-3"><span class="icon-room mr-1"></span> {{ Str::limit($job->address, 20)}}</div>
-                    <div><span class="icon-money mr-1"></span> ${{ $job->salary }}</div>
+                    <div><span class="icon-money mr-1"></span> GH₵{{ $job->salary }}</div>
                   </div>
                 </div>
               </div>

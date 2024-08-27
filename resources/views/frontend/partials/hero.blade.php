@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-12" data-aos="fade">
-          <h1>Find Job</h1>
+          <h1>Find Your Dream Job Here</h1>
           
             <div class="row mb-3">
               <div class="col-md-9">
@@ -14,7 +14,7 @@
                 </div>
               </div>
               <div class="col-md-3">
-                <input type="button" class="btn btn-search btn-primary btn-block" value="Type Jobs">
+                <input type="button" class="btn btn-search btn-primary btn-block" value="Search Jobs">
               </div>
             </div>
             {{-- <div class="row">

@@ -99,7 +99,7 @@
             <div class="form-group pt-2 row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <button class="theme-primary-btn btn btn-success" type="submit">Create post</button>
+                    <button class="theme-primary-btn btn btn-success" type="submit">Update testimonial</button>
                    
                  </div>
             </div>

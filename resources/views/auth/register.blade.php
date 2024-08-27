@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center"><h3 class="mt-1">{{ __('Job Seeker Register') }}</h3></div>
+                <div class="card-header text-center"><h3 class="mt-1">{{ __('User Registration') }}</h3></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -102,8 +102,12 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register as Seeker') }}
+                                    {{ __('Register') }}
                                 </button>
+                                <p>
+                                <!-- <a href="#" data-bs-target="#login-modal" data-toggle="modal" data-target="#login-modal" ><span class="bg-primary text-white py-3 px-3 rounded"><span class="icon-sign-in mr-3"></span>Login</span></a> -->
+                                <!-- <i>Already have an account?</i> <a href="#" id="login-modal"> Login Here</a> -->
+                                </p>
                             </div>
                         </div>
                     </form>

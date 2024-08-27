@@ -99,7 +99,7 @@
                  </div>
             </div>
             <div class="form-group row">
-                <div class="col-md-2">Nomber of vacancy</div>
+                <div class="col-md-2">Number of vacancy</div>
                 <div class="col-md-4">
                     <input type="text" readonly class="form-control"  value="{{ $job->number_of_vacancy }}">
                    

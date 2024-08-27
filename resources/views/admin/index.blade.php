@@ -54,12 +54,15 @@
               <div class="card text-white bg-danger o-hidden h-100">
                 <div class="card-body pt-5 pb-5 d-flex align-items-center">
                   <div class="card-body-icon">
+                  <a href="dashboard/companies">
     <i class="material-icons text-white md-5em">business</i>
-    
+           </a>
                   </div>
                   <div class="ml-5">
-                    <h3>( {{ count($companies) }} )</h3>
-                    <p> Total Companies</p>
+                  <a href="dashboard/companies">
+                    <h3 style="color:white;">( {{ count($companies) }} )</h3>
+                    <p style="color:white;"> Total Companies</p>
+</a>
                   </div>
                 </div>
               </div>
@@ -75,7 +78,7 @@
                   </div>
                   <div class="ml-5">
                     <h3>( {{ count($featuredJobs) }} )</h3>
-                    <p> Total Featured Jobs</p>
+                    <p> Total Jobs</p>
                   </div>
                 </div>
               </div>

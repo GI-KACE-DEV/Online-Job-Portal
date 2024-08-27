@@ -20,7 +20,7 @@
         <div class="py-1">
           <div class="row align-items-center">
             <div class="col-2">
-              <h2 class="mb-0 site-logo"><a href="/">Job<strong class="font-weight-bold">Finder</strong> </a></h2>
+              <h2 class="mb-0 site-logo"><a href="/">Job<strong class="font-weight-bold">FinderGhana</strong> </a></h2>
             </div>
             <div class="col-10">
               <nav class="site-navigation text-right" role="navigation">
@@ -126,7 +126,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content pb-4">
       <div class="modal-header mt-2 mb-2">
-        <h5 class="modal-title" id="login-modal">{{ __('User/Employee/Admin') }}</h5>
+        <h5 class="modal-title" id="login-modal">{{ __('User Login') }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

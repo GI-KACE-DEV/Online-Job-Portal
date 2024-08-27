@@ -111,7 +111,7 @@
           </div>
           <div class=" mb-8 bg-white">
             <h3 class="h5 text-black mb-3"><i class="icon-money" style="color: #28a745;">&nbsp;</i>Salary</h3>
-            <p>${{$job->salary}}</p>
+            <p>GH₵{{$job->salary}}</p>
           </div>
       
  
@@ -124,7 +124,7 @@
         
         <div class="p-4 mb-3 bg-white">
           <h3 class="h5 text-black mb-3">Short Job Info</h3>
-            <p>Company name: {{$job->company->cname ?? ''}}</p>
+            <p> {{$job->company->cname ?? ''}}</p>
             <p>Address: {{$job->address}}</p>
             <p>Employment Type: {{  Str::ucfirst($job->type)}}</p>
             <p>Position: {{  Str::ucfirst($job->position)}}</p>

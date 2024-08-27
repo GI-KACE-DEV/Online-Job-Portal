@@ -147,7 +147,7 @@
                     </div>
                     <div class="card-body">
                         <p><strong class="badge bg-secondary badge-primary">Slogan:  </strong> {{ Auth::user()->company->slogan }}</p>
-                        <p>Company Name: <strong class="badge bg-secondary badge-primary">  {{ Auth::user()->company->cname }}</strong></p>
+                        <p> <strong class="badge bg-secondary badge-primary">  {{ Auth::user()->company->cname }}</strong></p>
                         <p>Company Address: <strong class="badge bg-secondary badge-primary">  {{ Auth::user()->company->address }}</strong></p>
                         <p>Company Email: <strong class="badge bg-secondary badge-primary">  {{ Auth::user()->email }}</strong></p>
                         <p>Company Phone: <strong class="badge bg-secondary badge-primary">  {{ Auth::user()->company->phone }}</strong></p>
