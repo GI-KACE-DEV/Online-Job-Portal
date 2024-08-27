@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.jobBoard', 'Online Job Portal') }}</title>
+    <title>{{ config('app.jobBoard', 'Job Finder Ghana') }}</title>
     <meta name="description" content="Unlock unparalleled job board performance with our meticulously designed Laravel Vue template. Seamlessly blend functionality and aesthetics while dominating search rankings through advanced SEO optimization. Elevate user experience, engage job seekers and companies effortlessly. Explore limitless possibilities for your job board platform today.">
 
 

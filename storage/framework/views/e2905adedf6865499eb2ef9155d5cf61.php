@@ -9,7 +9,7 @@
           <div class="brand-logo">
             <a class="navbar-brand" href="<?php echo e(url('/')); ?>" id="menu-action">
               
-              <span><?php echo e(config('app.adminName', 'Online Job Portal')); ?></span>
+              <span><?php echo e(config('app.adminName', 'Job Finder Ghana')); ?></span>
             </a>    
 
            

@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title><?php echo e(config('app.adminName', 'Dashboard | Online Job Portal')); ?></title>
+    <title><?php echo e(config('app.adminName', 'Dashboard | Job Finder Ghana')); ?></title>
 
     <!--====== Favicon Icon ======-->
     <!-- <link rel="shortcut icon" href="https://dw3i9sxi97owk.cloudfront.net/uploads/thumbs/db9c4e1327eb8fe5e9395a4b04e1ea4a_70x70.jpg" type="image/png"> -->
