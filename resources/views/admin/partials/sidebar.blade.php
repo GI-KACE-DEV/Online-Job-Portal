@@ -16,7 +16,7 @@
                   <li><a class="{{ request()->routeIs('adminPostCreate') || request()->routeIs('adminPosts') || request()->routeIs('adminPostEdit') || request()->routeIs('adminPostShow') || request()->routeIs('adminPostTrash') ? 'active' : '' }}" href="{{ url('/dashboard/posts') }}"><i class="material-icons">collections</i>Posts</a></li>
                   <li><a class="{{  request()->routeIs('adminShow') || request()->routeIs('adminEdit') || request()->routeIs('adminJobTrash') || request()->routeIs('adminJobs') || request()->routeIs('adminEdit') || request()->routeIs('adminShow') || request()->routeIs('adminCreate')   ? 'active' : '' }}" href="{{ url('/dashboard/jobs') }}"><i class="material-icons">business_center</i>Jobs</a></li>
          
-                  <li><a class="{{  request()->routeIs('dashboard.settings')   ? 'active' : '' }}" href="{{ route('dashboard.settings') }}"><i class="material-icons">settings</i>General Settings</a></li>
+                  <!-- <li><a class="{{  request()->routeIs('dashboard.settings')   ? 'active' : '' }}" href="{{ route('dashboard.settings') }}"><i class="material-icons">settings</i>General Settings</a></li> -->
                   </ul>
               </div>  
             </aside>

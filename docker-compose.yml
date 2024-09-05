@@ -18,7 +18,7 @@ services:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/nginx.conf/
     ports:
-          - 10000:10000
+          - 8000:8000
     networks:
       - lahmi
 
