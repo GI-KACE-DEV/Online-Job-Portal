@@ -15,13 +15,20 @@ fi
 role=${CONTAINER_ROLE:-app}
 
 if [ "$role" = "app" ]; then
-    php artisan migrate:fresh
-    php artisan db:seed
+    #php artisan migrate:fresh
+    # php artisan db:seed
     php artisan key:generate
     php artisan cache:clear
     php artisan config:clear
     php artisan route:clear
-    php artisan serve --port=10000 --host=0.0.0.0 --env=.env
+
+    # Run npm development server if not in production
+    if [ "$APP_ENV" != "production" ]; then
+        echo "Running npm dev server..."
+        npm run dev &
+    fi
+
+    php artisan serve --port=8000 --host=0.0.0.0 --env=.env
     exec docker-php-entrypoint "$@"
 elif [ "$role" = "queue" ]; then
     echo "Running the queue ... "

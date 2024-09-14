@@ -12,12 +12,19 @@ RUN pecl install -o -f redis \
     && rm -rf /tmp/pear \
     && docker-php-ext-enable redis
 
+
+
+    # Install Node.js and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+apt-get install -y nodejs \
+&& npm install -g npm@latest
+
 WORKDIR /var/www
 COPY . .
 
 COPY --from=composer:2.3.5 /usr/bin/composer /usr/bin/composer
 
-ENV PORT=10000
+
 
 
 # Copy the custom entrypoint script
@@ -39,6 +46,8 @@ FROM node:14-alpine as node
 WORKDIR /var/www
 COPY . .
 
+RUN chmod -R 755 /var/www
+
 RUN npm install --global cross-env
 RUN npm install
 
@@ -47,4 +56,7 @@ VOLUME /var/www/node_modules
 
 
 # Expose the port that the application listens on.
-EXPOSE 10000
+EXPOSE 8000
+
+# Run the application.
+# CMD ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "10000"]
